@@ -80,7 +80,15 @@ module.exports = {
         Buffer: ["buffer", "Buffer"],
       }),
     ])
-    
+
+    // Ignore warnings from source-map-loader for web3.min.js
+    config.ignoreWarnings = [
+      {
+        module: /web3\.min\.js$/,
+        warnings: [/Failed to parse source map/],
+      },
+    ];
+
     return config
   },
   devServer: overrideDevServer(devServerConfig()),

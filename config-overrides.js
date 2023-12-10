@@ -85,7 +85,7 @@ module.exports = {
     config.ignoreWarnings = [
       {
         module: /web3\.min\.js$/,
-        warnings: [/Failed to parse source map/],
+        message: [/Failed to parse source map/],
       },
     ];
 
